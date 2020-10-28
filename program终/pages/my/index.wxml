@@ -1,0 +1,97 @@
+<view class="all" >
+  <!--pages/my/index.wxml-->
+  <view class="user_info_wrap" >
+      <view class="user_img_wrap" wx:if="{{userInfo.avatarUrl}}">
+          <!-- 背景图片 -->
+          <image class="user_bg" src="{{userInfo.avatarUrl}}"></image>
+          <view class="user_info">
+              <!-- 头像 -->
+              <navigator url="/pages/userinfo/userinfo">
+                <image src="{{userInfo.avatarUrl}}" mode="widthFix" ></image>
+              </navigator>
+              <!-- 用户名 -->
+              <view class="user_name">{{userInfo.nickName}}</view>
+          </view>
+      </view>
+      <view class="user_btn" wx:else>
+        <button open-type="getUserInfo" bindgetuserinfo="handleGetuserinfo" type="primary" plain>
+            登录
+        </button>  
+      </view>
+  </view>
+  <view class="info">
+    <!-- 订单信息 -->
+    <view class="user_content">
+      <view class="user_main">
+        <view class="his">
+          <view class="my_order" >我的订单</view>
+          <view class="all_order" bindtap="handleAllorder">全部订单></view>
+        </view>
+        <view class="his_content" >
+          <view class="his_item">
+            <view class="iconfont icon-daifukuan"></view>
+            <view class="item_text">待付款</view>
+          </view>
+          <view class="his_item">
+            <view class="iconfont icon-ziyuan"></view>
+            <view class="item_text">待发货</view>
+          </view>
+          <view class="his_item">            
+            <view class="iconfont icon-daishouhuo"></view>
+            <view class="item_text">待收货</view>
+          </view>
+          <view class="his_item">            
+            <view class="iconfont icon-wodedaipingjia"></view>
+            <view class="item_text">待评价</view>
+          </view>
+          <view class="his_item">
+            <view class="iconfont icon-shouhou"></view>
+            <view class="item_text">售后/退款</view>
+          </view>
+        </view> 
+      </view>
+    </view>
+    <!-- 其他信息-->
+    <view class="other_content">
+      <view class="other_item">
+        <navigator class="iconfont icon-icon-" url="/pages/collect/index">
+          商品收藏
+        </navigator>
+      </view>
+      <view class="other_item">
+        <navigator class="iconfont icon-shinshopshouhuodizhi" url="/pages/address/address">
+          收货地址
+        </navigator>
+      </view>
+      <view class="other_item">
+        <view class="iconfont icon-lianxikefu">
+          联系客服
+        </view>
+        <button open-type="contact" size="mini">1</button>
+      </view>
+      <view class="other_item">
+        <navigator class="iconfont icon-yijianfankui" url="/pages/feedback/feedback">
+          意见反馈     
+        </navigator>
+      </view>
+      <view class="other_item">
+        <navigator class="iconfont icon-gerenxinxi" url="/pages/userinfo/userinfo">
+          个人信息     
+        </navigator>
+      </view>
+      <view class="other_item">
+        <view class="iconfont icon-cedaohang-zhanghao">
+          账户设置     
+        </view>
+      </view>
+      <view class="other_item">
+        <navigator class="iconfont icon-dianpu"  url="/pages/index/index" open-type="switchTab">
+          进入店铺     
+        </navigator>
+      </view>
+    </view>
+
+  </view>
+
+
+</view>
